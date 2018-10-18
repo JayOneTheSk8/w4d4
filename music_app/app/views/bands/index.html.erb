@@ -1,0 +1,5 @@
+<div class="band_pictures">
+  <% Band.all.each do |band| %>
+      <img class="format_image" src="<%= band.image %>" alt="">
+  <% end %>
+</div>
