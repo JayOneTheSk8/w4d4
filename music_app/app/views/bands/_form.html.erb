@@ -1,0 +1,39 @@
+<% if editing %>
+  <% title = "Edit Your Band!" %>
+  <% action = band_url(band) %>
+  <% submission = "Edit Band!" %>
+<% else %>
+  <% title = "Upload Your Band!" %>
+  <% action = bands_url %>
+  <% submission = "Upload Band!" %>
+<% end %>
+
+<h2><%= title %></h2>
+
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<form action="<%= action %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="patch">
+  <p>
+    <label class="upload_band_label" for="band_name">Your Band's Name: </label>
+    <input id="band_name" type="text" name="band[name]" value="<%= @band.name %>">
+  </p>
+
+  <br><br>
+
+  <p>
+    <label class="upload_band_label" for="band_picture">Band Picture URL: </label>
+    <input id="band_picture" type="text" name="band[image]" value="<%= @band.image %>">
+  </p>
+
+  <br>
+
+  <input class="button" type="submit" value="<%= submission %>">
+</form>
