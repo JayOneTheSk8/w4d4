@@ -1,0 +1,39 @@
+<h1>Music App</h1>
+
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<h3>New User</h3>
+
+<!-- <input type="button" name="(should send to LogIn Page)" value=""> -->
+<!-- <form action="<%= new_session_url %>" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token  %>">
+  <input type="submit" value="Go to Sign-in">
+  <br><br>
+</form> -->
+<a class="button" href="<%= new_session_url %>">Go to Sign-in</a>
+
+<form class="" action="<%= users_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token  %>">
+
+  <p>
+    <label for="user_email">Email</label>
+    <input id="user_email" type="email" name="user[email]" value="<%= @user.email %>">
+  </p>
+
+  <br><br>
+
+  <p>
+    <label for="user_password">Password</label>
+    <input id="user_password" type="password" name="user[password]" value="">
+  </p>
+
+  <br>
+
+  <input class="right_button" type="submit" value="Submit">
+</form>
