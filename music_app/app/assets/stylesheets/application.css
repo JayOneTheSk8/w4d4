@@ -26,9 +26,10 @@ body {
   border-right: solid black; */
 }
 
-h1 {
+.home {
   font-family: verdana;
   color: blue;
+  text-decoration: none;
 }
 
 form {
@@ -82,6 +83,11 @@ form p input {
   -webkit-flex-wrap: wrap;
 }
 
+.show_image {
+  width: 400px;
+  height: 400px;
+}
+
 .format_image {
   width: 200px;
   height: 200px;
@@ -92,4 +98,8 @@ form p input {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.side_by_side {
+  display: inline;
 }

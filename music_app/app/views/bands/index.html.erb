@@ -3,6 +3,10 @@
     <div class="display_under">
       <img class="format_image" src="<%= band.image %>" alt="">
       <a href="#"><%= band.name %></a>
+      <span>
+        <a href="<%= edit_band_url(band.id) %>">Edit</a> |
+        <a href="<%= band_url(band.id) %>">Remove</a>
+      </span>
     </div>
   <% end %>
 </div>
